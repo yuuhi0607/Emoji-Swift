@@ -64,17 +64,22 @@ extension String {
     internal static func loadPlist() -> [Emoji] {
         var ret:[Emoji] = []
         let frameworkBundle = Bundle(for: Dummy.self)
-        let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("Emoji.bundle")
-        let resourceBundle = Bundle(url: bundleURL!)
-        let filePath = resourceBundle?.path(forResource: "emoji", ofType: "plist")
-        if let plist = NSDictionary(contentsOfFile: filePath!) {
-            for (key, value) in plist {
-                if let k = key as? String, let v = value as? [String] {
-                    ret.append(Emoji(shortname: k, codepoints: v))
+        if let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("Emoji.bundle") {
+            if let resourceBundle = Bundle(url: bundleURL) {
+                if let filePath = resourceBundle.path(forResource: "emoji", ofType: "plist") {
+                    if let plist = NSDictionary(contentsOfFile: filePath) {
+                        for (key, value) in plist {
+                            if let k = key as? String, let v = value as? [String] {
+                                ret.append(Emoji(shortname: k, codepoints: v))
+                            }
+                        }
+                        return ret
+                    }
                 }
             }
         }
-        return ret
+        assertionFailure("Not found Emoji.bundle or emoji.plist")
+        return []
     }
 
 }
