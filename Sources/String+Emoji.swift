@@ -11,7 +11,7 @@ import Foundation
 
 extension String {
 
-    public static var emojis = emoji {
+    public static var emojis = loadPlist() {
         didSet {
             emojiUnescapeRegExp = createEmojiUnescapeRegExp()
             emojiEscapeRegExp = createEmojiEscapeRegExp()
@@ -59,6 +59,22 @@ extension String {
             }
         }
         return s as String
+    }
+    
+    internal static func loadPlist() -> [Emoji] {
+        var ret:[Emoji] = []
+        let frameworkBundle = Bundle(for: Dummy.self)
+        let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("Emoji.bundle")
+        let resourceBundle = Bundle(url: bundleURL!)
+        let filePath = resourceBundle?.path(forResource: "emoji", ofType: "plist")
+        if let plist = NSDictionary(contentsOfFile: filePath!) {
+            for (key, value) in plist {
+                if let k = key as? String, let v = value as? [String] {
+                    ret.append(Emoji(shortname: k, codepoints: v))
+                }
+            }
+        }
+        return ret
     }
 
 }

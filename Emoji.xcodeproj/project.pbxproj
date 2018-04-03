@@ -14,6 +14,7 @@
 		8D0C18811AD43282002924C1 /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0C187E1AD43282002924C1 /* Emoji.swift */; };
 		8D0C18821AD43282002924C1 /* String+Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0C187F1AD43282002924C1 /* String+Emoji.swift */; };
 		8D0C18831AD43282002924C1 /* String+Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0C187F1AD43282002924C1 /* String+Emoji.swift */; };
+		8EAD9B4520735A3C004AA07F /* Emoji.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8EAD9B4420735A3C004AA07F /* Emoji.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,8 @@
 		8D0C18651AD431DE002924C1 /* Emoji.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Emoji.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D0C187E1AD43282002924C1 /* Emoji.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
 		8D0C187F1AD43282002924C1 /* String+Emoji.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Emoji.swift"; sourceTree = "<group>"; };
-		8D47855B1B57F70800B37898 /* Emoji.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Emoji.playground; sourceTree = "<group>"; };
+		8D47855B1B57F70800B37898 /* Emoji.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Emoji.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		8EAD9B4420735A3C004AA07F /* Emoji.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoji.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				8D0C187F1AD43282002924C1 /* String+Emoji.swift */,
 				8D0C18491AD4316B002924C1 /* Emoji.h */,
 				8D0C18471AD4316B002924C1 /* Supporting Files */,
+				8EAD9B4420735A3C004AA07F /* Emoji.bundle */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EAD9B4520735A3C004AA07F /* Emoji.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
